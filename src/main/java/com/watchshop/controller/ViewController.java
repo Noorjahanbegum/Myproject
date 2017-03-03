@@ -85,7 +85,7 @@ public class ViewController {
 		List prolist=vpDao.listPro();
 		model.put("pro", prolist);
 		
-		return "info";
+		return "singleimage";
 	
 }
 

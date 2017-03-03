@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue
+	
 private int id;
 	@Column
 private String name;

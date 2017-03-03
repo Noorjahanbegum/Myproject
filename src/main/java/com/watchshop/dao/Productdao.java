@@ -12,12 +12,13 @@ import com.watchshop.model.Product;
 public class Productdao {
 	@Autowired
 	 SessionFactory sessionFactory;
-	public void saveproduct(Product product)
+	
+	public void saveproduct(Product prod)
 	{
 		Session session= sessionFactory.openSession();
 		System.out.println("insert method called");
 		session.beginTransaction();
-		session.save(product);
+		session.save(prod);
 		session.getTransaction().commit();
 			session.close();
 		
