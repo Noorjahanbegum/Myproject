@@ -28,8 +28,8 @@
 <li class="active"><a href="index.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 <li><a href="adminhome"><span class="glyphicon glyphicon-user"></span> AdminHome</a></li>
 <li><a href="listproduct"><span class="glyphicon glyphicon-search"></span>Products</a></li>
-<li><a href="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-<li><a href="regist"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+<li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 <li><a href="contactus"><span class="glyphicon glyphicon-envelope"></span> Contact us</a></li>
 <li><a href="ViewProduct"><span class="glyphicon glyphicon-envelope"></span> ViewProd</a></li>
 <li><a href="about"><span class="glyphicon glyphicon-exclamation-sign"></span> About us</a></li>

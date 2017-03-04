@@ -26,16 +26,13 @@
             </thead>
             <c:forEach  items="${cl}" var="cls">
                 <tr>
-                 <td><c:out value="${cls.cartid}"/></td>
-                    <td><c:out value="${cls.cartuser}"/></td>
-                   <td><c:out value="${cls.Productid }" /></td>
+              
                     <td><c:out value="${cls.productname}"/></td>
                     <td><c:out value="${cls.productprice}"/></td>
                     <td><c:out value="${cls.quantity}"/></td>
                     <td><c:out value="${cls.cattotal}"/></td>
                     <td>
-				<c:url var="src" value="/resources/${cls.Productid }.jpg"></c:url>
-				<img src="${src }" width="50" height="50"/>
+				
 				
                 </c:forEach>
         </table>

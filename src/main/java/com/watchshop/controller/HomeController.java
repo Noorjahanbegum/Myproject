@@ -4,11 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-	@RequestMapping("/login")
-	public String log()
-	{
-		return "login";
-	}
+	
 @RequestMapping("/adminhome")
 public String admin()
 {
@@ -19,10 +15,10 @@ public String user()
 {
 	return "productlist";
 }
-@RequestMapping("/register")
-public String register()
+@RequestMapping("/Register")
+public String regist()
 {
-	return "register";
+	return "Register";
 }
 @RequestMapping("/contactus")
 public String con()
