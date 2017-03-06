@@ -66,7 +66,7 @@ public class SupDao {
 		session.close();
 		
 		
-		System.out.println(supobj.getId());
+		System.out.println(supobj.getName());
 		System.out.println("=============================="+ supobj.getName());
 		
 	}
