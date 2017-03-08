@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html;* charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css"> 
-body {background-image: url("resources/supplier.png");} 
+body {background-image: url("resources/supplier.jpg"); width:"100%"; height:"50%";} 
  </style>
  <style>
 table {
@@ -31,12 +31,33 @@ tr{background-color: #f2f2f2;
 
 th {
     background-color: #4CAF50;
-    color: white;
+    color: white;/*
    }
 </style>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<img src="resources/logo.jpg"  width="200" height="110">
+<nav class="navbar navbar-default navbar-static" >
+<div class="navbar-header">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://www.script-tutorials.com/responsive-website-using-bootstrap/">BEAUTY ESSENTIAL WEBSITE</a>
+</div>
+<!-- submenu elements for #b-menu-2 -->
+<div class="collapse navbar-collapse" id="b-menu-2">
+<ul class="nav navbar-nav" >
+<li class="active"><a href="adminhome.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+<li><a href="addproduct"><span class="glyphicon glyphicon-search"></span>Products</a></li>
+<li><a href="AddSupplier"><span class="glyphicon glyphicon-user"></span> Supplier</a></li>
+<li><a href="Category"><span class="glyphicon glyphicon-list"></span> Category</a></li>
+</ul>
+</div><!-- /.nav-collapse -->
+</nav>
 <center><h2>Add Supplier</h2></center>
 <c:set var="p" scope="session" value="${spedit}"/>
 <c:choose>
@@ -64,7 +85,7 @@ th {
     </div><br/> <br/> <br/>
     </div>
     <br/> <br/> <br/>
-    <button type="submit" class="btn btn-success">Add Supplier</button>
+    <button type="submit" class="btn btn-danger">Add Supplier</button>
     <br/> <br/> <br/> <br/>
   </div>
   </form>
@@ -93,14 +114,14 @@ th {
     </div><br/> <br/> <br/>
     </div>
     <br/> <br/> <br/>
-    <button type="submit" class="btn btn-success">Edit Supplier</button>
+    <button type="submit" class="btn btn-info">Edit Supplier</button>
     <br/> <br/> <br/> <br/>
   </div>
   </form>
   </form:form>
   </c:otherwise>
   </c:choose>
-  <br/> <br/> <br/> <br/> <br/> <br/>
+  
 <h2 style="background-color:rgb(255, 255, 255)"><center><bold> Supplier List </bold></center></h2>
 <table class="table table-bordered">
   <thead>

@@ -26,11 +26,11 @@
   <img src="${src }" width="250" height="200"/>
    </div>
    <div class="col-sm-4" >
-   <form action="AddtoCart">
+   <form action="AddToCart">
    <input type="hidden" name="proid" value="${prol.id}"> <br>
   Quantity<input type="text" name="quantity"  value="1"/>
    <br><br>
-   <button type="submit" class="btn btn-info">  Add to Cart  </button></div>
+   <button type="submit" class="btn btn-info">  Add to Cart  </button></div></form>
           <h2>
           <div class="col-sm-6 text-left"> 
     <br><c:out value="${prol.name}"/><br>

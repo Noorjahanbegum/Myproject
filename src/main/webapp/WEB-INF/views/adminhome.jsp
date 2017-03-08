@@ -4,14 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="Stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<scrpit src="http://ajax.googleapis.com/ajax/libs/jquery/3.11/jquery/3.1.1/jquery/min.js"></script>
-<scrpit src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 60%;
+      margin: auto;
+  }
+  </style>
+
 </head>
 <body>
- <img src="resources/logo.jpg"  width="200" height="110">
+
+<img src="resources/logo.jpg"  width="200" height="110">
 <nav class="navbar navbar-default navbar-static" >
 <div class="navbar-header">
 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
@@ -25,19 +34,54 @@
 <!-- submenu elements for #b-menu-2 -->
 <div class="collapse navbar-collapse" id="b-menu-2">
 <ul class="nav navbar-nav" >
+<li class="active"><a href="adminhome.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
-
-<li><a href="addproduct"><span class="glyphicon glyphicon-search"></span> Products</a></li>
-
-<li><a href="Category"><span class="glyphicon glyphicon-share"></span> Category</a></li>
-
-<li><a href="AddSupplier"><span class="glyphicon glyphicon-list"></span> Supplier</a></li>
-
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li data-toggle="modal" data-target="#my-modal-box"><a href="#"><span class="glyphicon glyphicon-share"></span> Share popup</a></li>
+<li><a href="addproduct"><span class="glyphicon glyphicon-search"></span>Products</a></li>
+<li><a href="AddSupplier"><span class="glyphicon glyphicon-user"></span> Supplier</a></li>
+<li><a href="Category"><span class="glyphicon glyphicon-list"></span> Category</a></li>
 </ul>
 </div><!-- /.nav-collapse -->
 </nav>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="resources/image8.jpg"  width="60%" height="345">
+      </div>
+
+      <div class="item ">
+        <img src="resources/image9.jpg" width="70%" height="345">
+      </div>
+    
+      <div class="item">
+        <img src="resources/image10.jpg"  width="60%" height="345">
+      </div>
+
+      <div class="item">
+        <img src="resources/image7.jpg"  width="60%" height="345">
+      </div>
+    </div>
+  <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<jsp:include page="footer.jsp"></jsp:include>		
 </body>
 </html>

@@ -87,7 +87,7 @@ public class LoginController {
 		     {
 		    	 session.setAttribute("Administrator",true);
 		    	 session.setAttribute("UserName", user.getUserName());
-		    	 page="/AdminHome";
+		    	 page="/adminhome";
 			
 		    }
 		}

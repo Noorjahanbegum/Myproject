@@ -6,14 +6,40 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>AddProduct</title>
 <style type="text/css"> 
 body {background-image: url("resources/pro.jpg"); width:100%;} 
  </style>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<img src="resources/logo.jpg"  width="200" height="110">
+<nav class="navbar navbar-default navbar-static" >
+<div class="navbar-header">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://www.script-tutorials.com/responsive-website-using-bootstrap/">BEAUTY ESSENTIAL WEBSITE</a>
+</div>
+<!-- submenu elements for #b-menu-2 -->
+<div class="collapse navbar-collapse" id="b-menu-2">
+<ul class="nav navbar-nav" >
+<li class="active"><a href="adminhome.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+<li><a href="addproduct"><span class="glyphicon glyphicon-search"></span>Products</a></li>
+<li><a href="AddSupplier"><span class="glyphicon glyphicon-user"></span> Supplier</a></li>
+<li><a href="Category"><span class="glyphicon glyphicon-list"></span> Category</a></li>
+</ul>
+</div><!-- /.nav-collapse -->
+</nav>
 <fieldset>
 <legend>ADDPRODUCT FORM</legend>
     <div align="center">
@@ -128,7 +154,7 @@ body {background-image: url("resources/pro.jpg"); width:100%;}
 </c:otherwise>
 </c:choose>
 
-<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+<br/> <br/> <br/>
 <table class="table table-bordered">
             <caption><h2>List of products</h2></caption>
             <thead>

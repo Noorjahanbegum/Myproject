@@ -7,81 +7,83 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.watchshop.model.AddCategory;
-import com.watchshop.model.SupModel;
+import com.watchshop.model.Supplier;
 
 @Repository
-public class SupDao {
+public class SuppDao {
 	@Autowired
-	SessionFactory sessionFactory;
+	 SessionFactory sessionFactory;
 	
-	public void saveSupplier(SupModel supm)
+	
+	public void storeSupplier(Supplier supp)
 	{
-		Session session=sessionFactory.openSession();
+		Session session= sessionFactory.openSession();
 		System.out.println("insert method called");
 		session.beginTransaction();
-		session.save(supm);
+		session.save(supp);
 		session.getTransaction().commit();
-		session.close();
-		
-		
+			session.close();
 	}
-	public List listsup()
+	
+	public List listSupp()
 	{
 		Session session=sessionFactory.openSession();
 		System.out.println("insert called method");
 		session.beginTransaction();
-		List supplist=session.createQuery("FROM SupModel").list();
-		session.getTransaction().commit();
-		session.close();
-		return supplist;
-	}
-	public SupModel getSup(int supid)
-	{
-		Session session=sessionFactory.openSession();
-		System.out.println("insert method called");
-		session.beginTransaction();
-		
-		SupModel sup = (SupModel)session.get(SupModel.class,supid); 
+		List suppliers=session.createQuery("FROM Supplier").list();
 		
 		session.getTransaction().commit();
 		session.close();
 		
-		
-		System.out.println(sup.getName());
-		System.out.println("=============================="+sup.getId());
-		return sup;
+		return suppliers;
 	}
 	
-	
-	public void updateSup(SupModel supobj)
+	public Supplier getSup (int supid)
 	{
 		Session session=sessionFactory.openSession();
-		System.out.println("insert method called");
+		System.out.println("insert called method");
 		session.beginTransaction();
 		
-		session.saveOrUpdate(supobj); 
+		Supplier su=(Supplier)session.get(Supplier.class,supid);
 		
 		session.getTransaction().commit();
 		session.close();
 		
+		System.out.println(su.getSname());
+		System.out.println(su.getSid());
+		System.out.println(su.getSdescription());
 		
-		System.out.println(supobj.getName());
-		System.out.println("=============================="+ supobj.getName());
-		
+		return su;
 	}
 
-	public SupModel deleteSup(int supid)
+	public void updateSupplier(Supplier supplier)
+	{
+		Session session=sessionFactory.openSession();
+		System.out.println("insert called method");
+		session.beginTransaction();
+		
+		session.saveOrUpdate(supplier);
+		
+		session.getTransaction().commit();
+		session.close();
+		
+		System.out.println(supplier.getSname());
+		System.out.println(supplier.getSid());
+		System.out.println(supplier.getSdescription());
+		}
+
+	public Supplier delSupplier(int suid)
 	{
 		Session session=sessionFactory.openSession();
 		System.out.println("insert method called");
 		session.beginTransaction();
 		
-		SupModel s = (SupModel)session.get(SupModel.class,supid);
+		Supplier s=(Supplier)session.get(Supplier.class,suid);
 		
 		session.delete(s);
 		session.getTransaction().commit();
 		session.close();
+		
 		return s;
 				
 	}
