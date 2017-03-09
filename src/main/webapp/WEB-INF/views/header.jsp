@@ -12,6 +12,7 @@
 </head>
 <body>
  <img src="resources/logo.jpg"  width="200" height="110">
+ 
 <nav class="navbar navbar-default navbar-static" >
 <div class="navbar-header">
 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
@@ -25,13 +26,22 @@
 <!-- submenu elements for #b-menu-2 -->
 <div class="collapse navbar-collapse" id="b-menu-2">
 <ul class="nav navbar-nav" >
+<li>Welcome <c:out value="${UserName }"></c:out></li>
 <li class="active"><a href="index.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
 <li><a href="listproduct"><span class="glyphicon glyphicon-search"></span>View Products</a></li>
-<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+
 <li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 <li><a href="contactus"><span class="glyphicon glyphicon-envelope"></span> Contact us</a></li>
 <li><a href="about"><span class="glyphicon glyphicon-exclamation-sign"></span> About us</a></li>
+<c:choose>
+<c:when test="${UserLoggedIn }">
+<li><a href="perform_logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+</c:when>
+<c:otherwise>
+<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+</c:otherwise>
+</c:choose>
 </ul>
 </div><!-- /.nav-collapse -->
 </nav>

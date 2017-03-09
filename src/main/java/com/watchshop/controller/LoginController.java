@@ -71,7 +71,7 @@ public class LoginController {
 		 //session.setAttribute("crtcnt",count);
 		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 		String page="";
-		String role="USER_ROLE";
+		String role="ROLE_USER";
 		for (GrantedAuthority authority : authorities) 
 		{
 		  

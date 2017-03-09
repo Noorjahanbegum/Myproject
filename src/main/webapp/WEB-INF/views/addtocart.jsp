@@ -25,15 +25,25 @@
             <c:forEach  items="${cl}" var="cls">
                 <tr>
               
+                    <td><c:out value="${cls.cartid}"/></td> 
                     <td><c:out value="${cls.productname}"/></td>
                     <td><c:out value="${cls.productprice}"/></td>
                     <td><c:out value="${cls.quantity}"/></td>
                     <td><c:out value="${cls.cattotal}"/></td>
+                    <td><a href="remove?acart=${cls.cartid}"/>Remove From Cart </td>
                     <td>
 				
 				
                 </c:forEach>
+                
         </table>
+        
+        <form action="listproduct">
+        <input type="submit" align="right" value="CONTINUE SHOPPING" class="btn btn-info"/>
+        </form><br/><br/>
+         <form action="">
+        <input type="submit" value="CHECKOUT" class="btn btn-warning"/>
+        </form>
         <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

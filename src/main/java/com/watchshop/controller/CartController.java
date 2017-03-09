@@ -5,6 +5,8 @@ package com.watchshop.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -26,13 +28,17 @@ public class CartController
 	Productdao prodDao;
 	
 	
-@RequestMapping(value="/AddtoCart",method=RequestMethod.GET)
-	public String addCart(@RequestParam("proid")int pid,@RequestParam("quantity") int qt, Map <String,Object> model )
+@RequestMapping(value="/AddToCart",method=RequestMethod.GET)
+	public String addCart(@RequestParam("proid")int pid,@RequestParam("quantity") int qt,HttpSession session, Map <String,Object> model )
 	{
 	Product p=prodDao.getP(pid);
 	CartModel c=new CartModel();
-	c.setCartid(101);
-	c.setCartuser("moiz");
+	int x=cartdao.maxId();
+	c.setCartid(++x);
+	
+	
+	
+	c.setCartuser((String)session.getAttribute("UserName"));
 	c.setProductid(p.getId());
 	c.setProductname(p.getName());
 	c.setProductprice(p.getPrice());
@@ -40,10 +46,22 @@ public class CartController
 	c.setCattotal(p.getPrice()*qt);
 	cartdao.savecart(c);
 	
-	List clist=cartdao.listcat();
+	List clist=cartdao.listcat((String)session.getAttribute("UserName"));
 	model.put("cl",clist);
 		return "addtocart";
 		
 		
 	}
+@RequestMapping (value="/remove",method=RequestMethod.GET)
+public String remCart(@RequestParam ("acart")int ct,HttpSession session, Map <String,Object> model)
+{
+	
+    cartdao.removeCart(ct);
+	
+	List clist=cartdao.listcat((String)session.getAttribute("UserName"));
+	model.put("cl",clist);
+	
+	return "addtocart";
+}
+
 }
