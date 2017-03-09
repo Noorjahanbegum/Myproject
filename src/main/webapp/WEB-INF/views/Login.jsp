@@ -65,9 +65,6 @@ span.psw {
 <h2>Login Form</h2>
 
 <form action="perform_login" method="post">
-  <div class="imgcontainer">
-    <img src="resources/log.jpg" alt="Avatar" class="avatar">
-  </div>
 
   <div class="container">
     <label><b>Username</b></label>

@@ -31,19 +31,13 @@
                     <td><c:out value="${cls.quantity}"/></td>
                     <td><c:out value="${cls.cattotal}"/></td>
                     <td><a href="remove?acart=${cls.cartid}"/>Remove From Cart </td>
-                    <td>
-				
+                   
 				
                 </c:forEach>
-                
-        </table>
-        
-        <form action="listproduct">
-        <input type="submit" align="right" value="CONTINUE SHOPPING" class="btn btn-info"/>
-        </form><br/><br/>
-         <form action="">
-        <input type="submit" value="CHECKOUT" class="btn btn-warning"/>
-        </form>
+      <tr><a href="listproduct" /><input type="submit" align="right" value="CONTINUE SHOPPING" class="btn btn-info"/>
+       <td></td><td></td><td></td><td></td>   <td></td>        <td><a href=""> <input type="submit" value="CHECKOUT" class="btn btn-warning"/></a></td></tr>
+				
+          </table>
         <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -22,6 +22,7 @@ import com.watchshop.model.Product;
 @Controller
 public class CartController 
 {
+	int crt=0;
 	@Autowired
 	CartDao cartdao;
 	@Autowired
@@ -31,6 +32,8 @@ public class CartController
 @RequestMapping(value="/AddToCart",method=RequestMethod.GET)
 	public String addCart(@RequestParam("proid")int pid,@RequestParam("quantity") int qt,HttpSession session, Map <String,Object> model )
 	{
+	crt++;
+	session.setAttribute("cartadd",crt);
 	Product p=prodDao.getP(pid);
 	CartModel c=new CartModel();
 	int x=cartdao.maxId();
@@ -63,5 +66,13 @@ public String remCart(@RequestParam ("acart")int ct,HttpSession session, Map <St
 	
 	return "addtocart";
 }
-
+@RequestMapping (value="/showCart",method=RequestMethod.GET)
+public String showCart(HttpSession session, Map <String,Object> model)
+{
+	List clist=cartdao.listcat((String)session.getAttribute("UserName"));
+	model.put("cl",clist);
+		return "addtocart";
+    
+	
+}
 }
