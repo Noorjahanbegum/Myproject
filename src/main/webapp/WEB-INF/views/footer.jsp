@@ -16,7 +16,7 @@
 	display: block;
 }
 .footer {
-	background: #EDEFF1;
+	background: white;
 	height: auto;
 	padding-bottom: 30px;
 	position: relative;
@@ -98,12 +98,12 @@
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 	float: left;
-	height: 36px;
+	height: 30px;
 	line-height: 36px;
 	margin: 0 8px 0 0;
 	padding: 0;
 	text-align: center;
-	width: 36px;
+	width: 30px;
 	transition: all 0.5s ease 0s;
 	-moz-transition: all 0.5s ease 0s;
 	-webkit-transition: all 0.5s ease 0s;
@@ -125,18 +125,18 @@
 	background: #2c3e50;
 }
 .social li a i {
-	font-size: 16px;
+	font-size:9px;
 	margin: 0 0 0 5px;
 	color: #EDEFF1 !important;
 }
 .footer-bottom {
-	background: #E3E3E3;
+	background: #736AFF;
 	border-top: 1px solid #DDDDDD;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 18px;
+	padding-bottom: 18px;
 }
 .footer-bottom p.pull-left {
-	padding-top: 20px;
+	padding-top: 15px;
 }
 .payments {
 	font-size: 1.5em;	
@@ -145,67 +145,21 @@
 <body>
 
 <footer>
-    <div class="footer" id="footer" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> HELP </h3>
-                    <ul>
-                        <li> <a href="#"> Payments </a> </li>
-                        <li> <a href="#"> Saved cards </a> </li>
-                        <li> <a href="#"> Shipping </a> </li>
-                        <li> <a href="#"> Cancelletion & Return </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Watch Shop</h3>
-                    <ul>
-                        <li> <a href="#"> Contactus </a> </li>
-                        <li> <a href="#"> About us </a> </li>
-                        <li> <a href="#"> Advertise</a> </li>
-                        
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> FEATURES </h3>
-                    <ul>
-                        <li> <a href="#"> Weekend Watch Lists </a> </li>
-                        <li> <a href="#"> Watch Reviews </a> </li>
-                        <li> <a href="#"> Watchs & Pencils </a> </li>
-                        <li> <a href="#"> Speedy Thursday </a> </li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                     <h3>Follow Us</h3>
-                    <ul class="social">
-                   
-                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row--> 
-        </div>
-        <!--/.container--> 
-    </div>
-    <!--/.footer-->
     
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left"> Copyright © Watchtime.net 2017. All right reserved. </p>
             <div class="pull-right">
+            <div class="social">
                 <ul class="nav nav-pills payments">
-                	<li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
+                	<li><i class="fa fa-facebook"></i></li>
+                    <li><i class="fa fa-twitter"></i></li>
+                    <li><i class="fa fa-google-plus"></i></li>
+                    <li><i class="fa fa-youtube"></i></li>
                 </ul> 
             </div>
         </div>
+    </div>
     </div>
     <!--/.footer-bottom--> 
 </footer>

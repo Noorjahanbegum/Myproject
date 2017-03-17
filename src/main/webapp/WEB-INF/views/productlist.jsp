@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">body {background-image:url("resources/view.jpg"); width:100%;}</style>
+
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

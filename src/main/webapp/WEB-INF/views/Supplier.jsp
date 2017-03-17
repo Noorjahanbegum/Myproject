@@ -136,8 +136,8 @@ th {
     <td><c:out value="${supl.sid}"/></td>
     <td><c:out value="${supl.sname}"/></td>
     <td><c:out value="${supl.sdescription}"/></td>
-    <td><a href="EditS?supid=${supl.sid}">Edit</a></td>
-    <td><a href="delsup?suid=${supl.sid }">Delete</a></td>
+    <td><a href="EditS?supid=${supl.sid}"><span class="glyphicon glyphicon-log-outEdit">edit</span></a></td>
+    <td><a href="delsup?suid=${supl.sid }"><span class="glyphicon glyphicon-remove">Delete</span></a></td>
   </tr>
   </c:forEach>
 </table>

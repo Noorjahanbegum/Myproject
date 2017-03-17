@@ -10,6 +10,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+.navbar-default .navbar-nav>li>a {
+    color: #eee;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: yellow;
+    background-color: #35b2b2;
+}
+.nav-bar-sachmem{
+    background-color:#35b2b2;
+    color:white;
+}
+
+</style>
+  <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 60%;
@@ -19,7 +33,42 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<nav class="navbar navbar-default nav-bar-sachmem">
+<div class="container-fluid">
+<div class="navbar-header">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<img src="resources/logo.jpg"  width="90" height="70">
+
+</div>
+<!-- submenu elements for #b-menu-2 -->
+
+
+
+<div class="collapse navbar-collapse" id="b-menu-2">
+<ul class="nav navbar-nav" >
+<li class="active"><a href="index.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+<li><a href="listproduct"><span class="glyphicon glyphicon-search"></span>View Products</a></li>
+<li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+<li><a href="about"><span class="glyphicon glyphicon-exclamation-sign"></span> About us</a></li>
+<a class="navbar-brand"><li>Welcome <c:out value="${UserName}"/></li></a>
+<li><a href="perform_logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+<li><a href="showCart"><img src="http://www.animatedimages.org/data/media/1633/animated-shopping-cart-image-0001.gif" width="40" height="25"><c:out value="${cartadd }"/></a></li>
+<c:choose>
+<c:when test="${UserLoggedIn}">
+</c:when>
+<c:otherwise>
+
+</c:otherwise>
+</c:choose>
+</ul>
+</div><!-- /.nav-collapse -->
+</nav>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">

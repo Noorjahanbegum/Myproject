@@ -4,24 +4,19 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.springframework.stereotype.Component;
 
 @Entity
 @Table
 public class UserDetails implements Serializable{
 	@Id
-	@GeneratedValue
+	
 	@Column(name = "userId")
 	private int userId;
-	
-	@Column(name = "name")
-	private String name;
-	
 	@Column(name = "userName")
 	private String userName;
 	
@@ -30,11 +25,46 @@ public class UserDetails implements Serializable{
 	
 	@Column(name = "mobile")
 	private String mobile;
+	@Column(name = "shipadd")
+	private String shipadd;
+	@Column(name = "billadd")
+	private String billadd;
+	@Column(name = "country")
+	private String country;
+	@Column(name = "zipcode")
+	private int zipcode;
 	
 	
+	public String getShipadd() {
+		return shipadd;
+	}
+	public void setShipadd(String shipadd) {
+		this.shipadd = shipadd;
+	}
+	public String getBilladd() {
+		return billadd;
+	}
+	public void setBilladd(String billadd) {
+		this.billadd = billadd;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	public int getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+
 	@Column(name = "email")
 	private String email;
-	
+	@Column(name = "name")
+	private String name;
 	
 	@Transient
 	private String role;

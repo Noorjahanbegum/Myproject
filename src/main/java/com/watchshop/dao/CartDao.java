@@ -2,15 +2,16 @@ package com.watchshop.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.watchshop.model.CartModel;
-
-
-
+import com.watchshop.model.UserDetails;
 
 @Repository
 public class CartDao {
@@ -86,6 +87,47 @@ public class CartDao {
 			session.getTransaction().commit();
 				session.close();
 				return cm;
+	}
+	public CartModel checkout(int crd)
+	{
+		Session session=sessionFactory.openSession();
+		System.out.println("insert method called");
+		session.beginTransaction();
+		
+		CartModel ck = (CartModel)session.get(CartModel.class,crd);
+		
+		session.getTransaction().commit();
+		session.close();
+		return ck;
+				
+	}
+	@Transactional
+	public List<UserDetails> getUser(String id) {
+		//creating session object    
+				Session session=sessionFactory.openSession();    
+				    
+				//creating transaction object    
+				Transaction t=session.beginTransaction();    
+		String hql = "from"+" UserDetails "+" where userName=" +"'"+id+"'";
+		@SuppressWarnings("rawtypes")
+		Query query = session.createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<UserDetails> listCategory = (List<UserDetails>) query.list();
+		
+		if (listCategory != null && !listCategory.isEmpty()) {
+			
+			/*Gson gson = new Gson();
+			
+			String jsoncartlist=gson.toJson(listCategory);
+			return jsoncartlist;
+			*/
+			return listCategory;
+		}
+		t.commit();//transaction is commited    
+		session.close();  
+		
+		return null;
 	}
 
 }

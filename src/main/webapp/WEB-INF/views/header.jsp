@@ -10,12 +10,31 @@
 <scrpit src="http://ajax.googleapis.com/ajax/libs/jquery/3.11/jquery/3.1.1/jquery/min.js"></script>
 <scrpit src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style>
+.navbar-default .navbar-nav>li>a {
+    color: #eee;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: yellow;
+    background-color: #35b2b2;
+}
+.nav-bar-sachmem{
+    background-color:#35b2b2;
+    color:white;
+}
+.navbar-brand
+{
+color: yellow;
+    background-color: #35b2b2;
+}
+</style>
 </head>
-<body>
- <img src="resources/logo.jpg"  width="200" height="110">
- 
 
-<nav class="navbar navbar-default navbar-static" >
+<body>
+
+
+<nav class="navbar navbar-default nav-bar-sachmem">
+<div class="container-fluid">
 <div class="navbar-header">
 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
 <span class="sr-only">Toggle navigation</span>
@@ -23,7 +42,8 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand"><li>Welcome <c:out value="${UserName}"/></li></a>
+<img src="resources/logo1.jpg"  width="90" height="70">
+
 </div>
 <!-- submenu elements for #b-menu-2 -->
 
@@ -37,11 +57,11 @@
 
 <li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 <li><a href="contactus"><span class="glyphicon glyphicon-envelope"></span> Contact us</a></li>
-<li><a href="about"><span class="glyphicon glyphicon-exclamation-sign"></span> About us</a></li>
-<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
 
-<li><a href="perform_logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
- <li><a href="showCart"><span class="glyphicon glyphicon-shopping-cart fa-2x" align="right"></span></a></li>
+<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+<a class="navbar-brand"><li class="active">Welcome <c:out value="${UserName}"/></li></a>
+<li><a href="perform_logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+<li><a href="showCart"><img src="http://www.animatedimages.org/data/media/1633/animated-shopping-cart-image-0001.gif" width="40" height="25" align="right"><c:out value="${cartadd }"/></a></li>
 <c:choose>
 <c:when test="${UserLoggedIn}">
 </c:when>

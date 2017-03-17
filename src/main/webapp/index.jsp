@@ -10,6 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+
+body {background-image: url("resources/front.jpg"); width:100%;} 
+ 
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 60%;
@@ -34,7 +37,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="resources/image1.jpg"  width="60%" height="345">
+        <img src="resources/image4.jpg"  width="60%" height="345">
       </div>
 
       <div class="item ">
@@ -46,7 +49,7 @@
       </div>
 
       <div class="item">
-        <img src="resources/image4.jpg"  width="60%" height="345">
+        <img src="resources/image1.jpg"  width="60%" height="345">
       </div>
     </div>
   <!-- Left and right controls -->

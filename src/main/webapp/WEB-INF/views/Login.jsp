@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <style>
+body {background-image:url("resources/log.jpg"); width:100%;}
+</style>
+<style>
 form {
     border: 3px solid #f1f1f1;
 }
@@ -65,6 +68,7 @@ span.psw {
 <h2>Login Form</h2>
 
 <form action="perform_login" method="post">
+ 
 
   <div class="container">
     <label><b>Username</b></label>

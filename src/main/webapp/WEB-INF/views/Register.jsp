@@ -8,6 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body {background-image:url("resources/reg.jpg"); width:100%;}
+</style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -17,40 +20,68 @@
     <div class="form-group">
       <label class="col-md-4 control-label">USER ID:</label>
       <div class="col-md-4" >
-      <input type="text" class="form-control" name="userId" >
+      <input type="text" class="form-control" name="userId" required="true">
+      
       </div> <br/> <br/> <br/>
     </div>
-    <div class="form-group">
-      <label class="col-md-4 control-label">Name:</label>
-      <div class="col-md-4" >
-      <input type="text" class="form-control" name="name" >
-      </div> <br/> <br/> <br/>
-    </div>
+   
     <div class="form-group">
       <label class="col-md-4 control-label" for="Category Name">USER NAME:</label>
       <div class="col-md-4">
-      <input type="text" class="form-control" name="userName" >
+      <input type="text" class="form-control" name="userName" required="true">
+      <td align="left"><form:errors name="userName" cssClass="error"/></td>
       </div> <br/> <br/> <br/>
     </div>
+    
     <div class="form-group">
       <label class="col-md-4 control-label" for="Description">PASSWORD:</label>
       <div class="col-md-4">
-      <input type="text" class="form-control" name="password" >
+      <input type="text" class="form-control" name="password" required="true">
+      <td align="left"><form:errors name="password" cssClass="error"/></td>
       </div> <br/> <br/> <br/>
     </div>
      <div class="form-group">
       <label class="col-md-4 control-label" for="Description">MOBILE:</label>
       <div class="col-md-4">
-      <input type="text" class="form-control" name="mobile" >
+      <input type="text" class="form-control" name="mobile" required="true">
+      <td align="left"><form:errors name="mobile" cssClass="error"/></td>
       </div> <br/> <br/> <br/>
     </div>
     <div class="form-group">
       <label class="col-md-4 control-label" for="Description">EMAIL:</label>
       <div class="col-md-4">
-      <input type="text" class="form-control" name="email" >
+      <input type="text" class="form-control" name="email" required="true">
+      <td align="left"><form:errors name="email" cssClass="error"/></td>
       </div> <br/> <br/> <br/>
     </div>
-    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Category Name"> BILLING ADDRESS:</label>
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="billadd" required="true">
+      <td align="left"><form:errors name="billadd" cssClass="error"/></td>
+      </div> <br/> <br/> <br/>
+    </div>
+     <div class="form-group">
+      <label class="col-md-4 control-label" for="Category Name"> SHIPPING ADDRESS:</label>
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="shipadd" required="true">
+      <td align="left"><form:errors name="shipadd" cssClass="error"/></td>
+      </div> <br/> <br/> <br/>
+    </div>
+     <div class="form-group">
+      <label class="col-md-4 control-label" for="Category Name">COUNTRY:</label>
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="country" required="true">
+      <td align="left"><form:errors name="country" cssClass="error"/></td>
+      </div> <br/> <br/> <br/>
+    </div>
+     <div class="form-group">
+      <label class="col-md-4 control-label" for="Category Name">ZIPCODE:</label>
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="zipcode" required="true">
+      <td align="left"><form:errors name="zipcode" cssClass="error"/></td>
+      </div> <br/> <br/> <br/>
+    </div>
    <button type="submit" class="btn btn-danger">Registration</button>
   </div>
  </form>

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,11 +18,13 @@ import com.watchshop.dao.CartDao;
 import com.watchshop.dao.Productdao;
 import com.watchshop.model.CartModel;
 import com.watchshop.model.Product;
+import com.watchshop.model.UserDetails;
 
 @Controller
 public class CartController 
 {
 	int crt=0;
+	double tot=0;
 	@Autowired
 	CartDao cartdao;
 	@Autowired
@@ -47,6 +49,8 @@ public class CartController
 	c.setProductprice(p.getPrice());
 	c.setQuantity(qt);
 	c.setCattotal(p.getPrice()*qt);
+	tot=tot+p.getPrice()*qt;
+	session.setAttribute("crtTot",tot);
 	cartdao.savecart(c);
 	
 	List clist=cartdao.listcat((String)session.getAttribute("UserName"));
@@ -75,4 +79,22 @@ public String showCart(HttpSession session, Map <String,Object> model)
     
 	
 }
+@RequestMapping(value = "/OrderConfirm", method = RequestMethod.GET)
+public String orderConfirm( HttpSession session,Model m) {
+
+	
+	String usernam=(String)session.getAttribute("userId");
+	List<UserDetails> userData=cartdao.getUser(usernam);
+	if(userData!=null)
+	{
+	
+		UserDetails ud=userData.get(0);
+		System.out.println("pro idddddddddddddddddddddd" + ud.getUserName());
+	m.addAttribute("UserInfo",userData);
+	
+	
+	}
+	return "orderConfirmation";
+}
+
 }

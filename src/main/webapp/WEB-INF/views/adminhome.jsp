@@ -10,6 +10,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+.navbar-default .navbar-nav>li>a {
+    color: #eee;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: yellow;
+    background-color: #35b2b2;
+}
+.nav-bar-sachmem{
+    background-color:#35b2b2;
+    color:white;
+}
+.navbar-brand
+{
+color: yellow;
+    background-color: #35b2b2;
+}
+  
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 60%;
@@ -20,8 +37,9 @@
 </head>
 <body>
 
-<img src="resources/logo.jpg"  width="200" height="110">
-<nav class="navbar navbar-default navbar-static" >
+
+<nav class="navbar navbar-default nav-bar-sachmem">
+<div class="container-fluid">
 <div class="navbar-header">
 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#b-menu-2">
 <span class="sr-only">Toggle navigation</span>
@@ -29,16 +47,19 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="https://www.script-tutorials.com/responsive-website-using-bootstrap/">BEAUTY ESSENTIAL WEBSITE</a>
+<img src="resources/logo1.jpg"  width="90" height="70">
+
 </div>
 <!-- submenu elements for #b-menu-2 -->
 <div class="collapse navbar-collapse" id="b-menu-2">
 <ul class="nav navbar-nav" >
-<li class="active"><a href="adminhome.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
 <li><a href="addproduct"><span class="glyphicon glyphicon-search"></span>Products</a></li>
 <li><a href="AddSupplier"><span class="glyphicon glyphicon-user"></span> Supplier</a></li>
 <li><a href="Category"><span class="glyphicon glyphicon-list"></span> Category</a></li>
+<li><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+<a class="navbar-brand"><li class="active">Welcome <c:out value="${UserName}"/></li></a>
+<li><a href="perform_logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
 </ul>
 </div><!-- /.nav-collapse -->
 </nav>

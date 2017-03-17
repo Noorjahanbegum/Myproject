@@ -12,10 +12,10 @@
 <jsp:include page="header.jsp"></jsp:include>
   
 <table class="table table-bordered">
-           <center> <caption><h2>List of products</h2></caption></center>
+           <center> <caption><h2>List Of Products</h2></caption></center>
             <thead>
             <tr>
-              
+              <th>CartId</th>
                 <th>Name</th>
                <th>Price</th>
                <th>Quantity</th>
@@ -30,13 +30,15 @@
                     <td><c:out value="${cls.productprice}"/></td>
                     <td><c:out value="${cls.quantity}"/></td>
                     <td><c:out value="${cls.cattotal}"/></td>
-                    <td><a href="remove?acart=${cls.cartid}"/>Remove From Cart </td>
-                   
-				
-                </c:forEach>
-      <tr><a href="listproduct" /><input type="submit" align="right" value="CONTINUE SHOPPING" class="btn btn-info"/>
-       <td></td><td></td><td></td><td></td>   <td></td>        <td><a href=""> <input type="submit" value="CHECKOUT" class="btn btn-warning"/></a></td></tr>
-				
+                    <td><a href="remove?acart=${cls.cartid}"/><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-remove"></span> Remove 
+        </button> </td>
+                 </c:forEach>	  
+				</tr>
+              <tr>
+      <td><a href="listproduct" /><input type="submit" value="CONTINUE SHOPPING" class="btn btn-info"/></td>
+       <td></td><td></td><td></td><td></td>   <td><a href="OrderConfirm"> <input type="submit" value="CHECKOUT" class="btn btn-warning"/></a></td></tr>
+		
           </table>
         <jsp:include page="footer.jsp"></jsp:include>
 </body>
